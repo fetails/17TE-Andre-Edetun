@@ -12,8 +12,6 @@ class Program
     static void Main(string[] args)
     {
         int freq = 0;
-        int lastFreq = 0;
-        bool hit = false;
         try
         {
             string text;
@@ -28,15 +26,7 @@ class Program
                 while ((line = streamReader.ReadLine()) != null)
                 {
                     freq += Int32.Parse(line);
-                    freq = lastFreq;
                 }
-
-                if(lastFreq == freq && !hit)
-                {
-                    Console.WriteLine("Dupplicate: " + lastFreq);
-                    hit = true;
-                }
-                
                 Console.WriteLine("Frequency: " + freq);
             }
         }
